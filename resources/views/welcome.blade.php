@@ -25,7 +25,7 @@
                     url: '/test-get',
                     type: 'GET',
                     success: function(data) {
-                        console.log(data.test2);
+                        console.log(data.message);
                     }
                 });
             });

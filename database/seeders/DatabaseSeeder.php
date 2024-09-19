@@ -21,9 +21,27 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $notif = new t_notification();
-        $notif->title = 'Test Notification';
-        $notif->content = 'This is a test notification';
-        $notif->save();
+        $values = [
+            [
+                'title'=> 'Test Notification 1',
+                'content'=> 'This is a test notification 1',
+            ],
+            [
+                'title'=> 'Test Notification 2',
+                'content'=> 'This is a test notification 2',
+            ],
+            [
+                'title'=> 'Test Notification 3',
+                'content'=> 'This is a test notification 3',
+            ],
+        ];
+
+        
+            foreach($values as $value) {
+                $notif = new t_notification();
+                $notif->title = $value['title'];
+                $notif->content = $value['content'];
+                $notif->save();
+            };
     }
 }
