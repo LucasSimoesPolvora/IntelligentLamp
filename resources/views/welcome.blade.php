@@ -11,11 +11,17 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" /> -->
 
         <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
         
     </head>
     <body>
-        <button id="btn">Click me</button>
+        {{-- <button id="btn">Click me</button> --}}
+        <audio id="audio" src="{{ asset('songs/notifSong.wav') }}"></audio>
+
+        <div id="notificationBox">
+
+        </div>
         <script src="{{ URL::asset('js/test.js') }}" type="module"></script>
     </body>
 </html>

@@ -1,9 +1,12 @@
 .notification {
     background-color: #f8d7da;
-    border-color: #f5c6cb;
     color: #721c24;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid transparent;
     border-radius: 4px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.notification p, .notification h2 {
+    margin-left: 30px;
 }
