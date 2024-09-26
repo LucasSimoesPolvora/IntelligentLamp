@@ -9,7 +9,7 @@ php artisan migrate:reset
 
 3. You can create the tables with this command: <br>
 ``` cmd
-php migrate migrate
+php artisan migrate
 ```
 4. (Optional) If you need to test the database, with the next command you can seed it with test data: <br>
 ``` cmd
