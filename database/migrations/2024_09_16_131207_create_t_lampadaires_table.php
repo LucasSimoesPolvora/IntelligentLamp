@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('t_notifications', function (Blueprint $table) {
+        Schema::create('t_lampadaire', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('content');
-            $table->unsignedBigInteger('fkLampadaire');
-            $table->timestamps();
-            $table->foreign('fkLampadaire')->references('id')->on('t_lampadaire')->onDelete('cascade');
+            $table->string('address');
+            $table->decimal('longitude');
+            $table->decimal('latitude');
         });
     }
 
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('t_notifications');
+        Schema::dropIfExists('t_lampadaires');
     }
 };
