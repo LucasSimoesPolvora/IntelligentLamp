@@ -22,6 +22,7 @@ Route::post('/insert/notification',  function (Request $req) {
         $notif = new t_notification();
         $notif->title = $reqContent['title'];
         $notif->content = $reqContent['message'];
+        $notif->fkLampadaire = $reqContent['fkLampadaire'];
         $notif->save();
     }
     catch (\Exception $e) {

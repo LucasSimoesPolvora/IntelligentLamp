@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let oldNotifications = [];
 
-    // document.getElementById('btn').addEventListener('click', function () {
-    //     insertNewNotification();
-    // });
+    document.getElementById('btn').addEventListener('click', function () {
+        insertNewNotification();
+    });
 
     setInterval(() => {
         $.ajax({
@@ -69,7 +69,8 @@ const insertNewNotification = () => {
         },
         data: {
             'title': 'Hello',
-            'message': 'World'
+            'message': 'World',
+            'fkLampadaire': 1
         },
         success: function (data) {
             console.log(data);

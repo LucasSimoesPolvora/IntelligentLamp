@@ -16,7 +16,7 @@
         
     </head>
     <body>
-        {{-- <button id="btn">Click me</button> --}}
+        <button id="btn">Click me</button>
         <audio id="audio" src="{{ asset('songs/notifSong.wav') }}"></audio>
 
         <div id="notificationBox">
