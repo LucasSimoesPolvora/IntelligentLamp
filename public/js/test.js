@@ -14,14 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
         insertNewNotification();
     });
 
-    setInterval(() => {
+    setInterval(async () => {
         $.ajax({
             url: '/test-get',
             type: 'GET',
-            success: async function (response) {
-                console.log(response.message);
-    
+            success: function (response) {
+                // console.log(response);
+                
                 if (response.length === 0) {
+                    // console.log('test');
                     return;
                 }
 
@@ -45,17 +46,41 @@ document.addEventListener('DOMContentLoaded', function () {
                     let title = document.createElement('h2');
                     title.textContent = notification.title;
 
+                    let date = document.createElement('p');
+                    date.textContent = "Date : " + new Date(Date.parse(notification.created_at)).toLocaleString();
+
                     let content = document.createElement('p');
-                    content.textContent = notification.content;
+                    content.textContent = `Content : \n${notification.content}`;
+
+                    let lampadaire = document.createElement('p');
+
+                    $.ajax({
+                        url: '/lampadaire/' + notification.fkLampadaire,
+                        type: 'GET',
+                        async: false,
+                        success: function (response) {
+                            // console.log(response);
+                            lampadaire.textContent = `Lampadaire : ${response.lampadaire.address}`;
+                            // lampadaire.textContent = response.lampadaire.name;
+                        },
+                        error: function (error) {
+                            console.error(error);
+                        }
+                    });
 
                     notificationDiv.appendChild(title);
+                    notificationDiv.appendChild(date);
                     notificationDiv.appendChild(content);
                     notificationDiv.appendChild(lampadaire);
 
                     notificationBox.appendChild(notificationDiv);
 
                 }
+            },
+            error: function (error) {
+                console.log(error);
             }
+            
         });
 
     }, 5000);

@@ -18,9 +18,9 @@ Route::get('/test-get', function () {
 
 Route::get('/lampadaire/{id}', function ($id) {
     $lampadaire = t_lampadaire::find(intval($id));
-    print_r($lampadaire);
     return response()->json([
-        'lampadaire' => $lampadaire,
+        'message' => 'Lampadaire found',
+        'lampadaire' => $lampadaire
     ]);
 });
 
