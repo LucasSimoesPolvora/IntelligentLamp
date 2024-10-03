@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         async: false,
                         success: function (response) {
                             // console.log(response);
-                            lampadaire.textContent = `Lampadaire : ${response.lampadaire.address}`;
+                            lampadaire.textContent = `Address : ${response.lampadaire.address}`;
                             // lampadaire.textContent = response.lampadaire.name;
                         },
                         error: function (error) {
