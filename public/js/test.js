@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $.ajax({
             url: '/test-get',
             type: 'GET',
-            success: function (response) {
+            success: async function (response) {
                 console.log(response.message);
     
                 if (response.length === 0) {
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     notificationDiv.appendChild(title);
                     notificationDiv.appendChild(content);
+                    notificationDiv.appendChild(lampadaire);
 
                     notificationBox.appendChild(notificationDiv);
 

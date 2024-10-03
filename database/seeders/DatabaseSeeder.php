@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $notif = new t_lampadaire;
-        $notif->address = "Place de, Gal Saint-François 17, 1003 Lausanne";
-        $notif->longitude = 46.519495728434876;
-        $notif->latitude = 6.632675078212141;
-        $notif->save();
+        // $notif = new t_lampadaire;
+        // $notif->address = "Place de, Gal Saint-François 17, 1003 Lausanne";
+        // $notif->longitude = 46.519495728434876;
+        // $notif->latitude = 6.632675078212141;
+        // $notif->save();
 
         $values = [
             [
